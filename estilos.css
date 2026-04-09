@@ -21,8 +21,6 @@ body {
   min-height: 100vh;
 }
 
-/* ── marquee ── */
-
 .marquee-bar {
   background: var(--rosa);
   color: #000;
@@ -43,8 +41,6 @@ body {
   0%   { transform: translateX(100vw); }
   100% { transform: translateX(-100%); }
 }
-
-/* ── header ── */
 
 header {
   text-align: center;
@@ -329,7 +325,6 @@ input[type=range] {
   animation: marquee 12s linear infinite;
 }
 
-/* ── quiz ── */
 
 .quiz-section {
   padding: 40px 20px;
