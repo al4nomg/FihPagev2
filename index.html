@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>la pagina de alan . peces</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="marquee-bar">
+  <span class="marquee-inner">
+    &nbsp;&nbsp;&nbsp; 🐟 PAGINA DE ALAN 🐟 INFORMATICO 🐟 PECES 🐟 FIH 🐟 BIENVENIDO 🐟 O BIENVENIDA 🐟 EL SALMON CANTA 🐟 PAGINA DE ALAN 🐟 INFORMATICO 🐟 PECES 🐟 FIH 🐟 BIENVENIDO 🐟 O BIENVENIDA 🐟 EL SALMON CANTA 🐟
+  </span>
+</div>
+
+<header>
+  <img class="header-gif" src="salmon.gif" alt="salmon">
+  <h1 class="site-title">la pagina<br>de alan</h1>
+  <p class="site-subtitle">fihPage v2 &bull; estudiante de informatica &bull; aficionado a los peces &bull; persona</p>
+  <img class="header-gif" src="salmon.gif" alt="salmon" style="transform:scaleX(-1)">
+</header>
+
+<section class="bienvenida">
+  <p>
+    hola soy <strong>alan</strong>, estudiante de programación.<br>
+    esta es mi página del campus virtual.<br>
+    aguanten los peces.
+  </p>
+  <img class="fih-img" src="fih.jpg" alt="fih">
+</section>
+
+<section class="salmon-cantante">
+  <h2>🎵 el salmón cantante</h2>
+  <p>de gravity falls. por si no lo conocías. igual vas a tener que escucharlo.</p>
+
+  <div class="player-box">
+    <img class="player-gif" src="salmon.gif" alt="salmon cantante">
+    <div class="player-title">♪ el salmón cantante canta en todas partes ♪</div>
+    <div class="player-controls">
+      <button class="btn-play" id="playBtn" onclick="toggleAudio()">▶ reproducir</button>
+      <span class="volume-label">vol:</span>
+      <input type="range" id="volRange" min="0" max="1" step="0.05" value="0.7" oninput="setVol(this.value)">
+    </div>
+    <div class="lyrics-ticker">
+      <span class="lyrics-inner">
+        &nbsp;&nbsp;&nbsp;♪ el salmón cantante canta en todas partes... canta en el río, canta en el mar, canta en el baño de tu facultad ♪ &nbsp;&nbsp;&nbsp; ♪ el salmón cantante canta en todas partes... canta en el río, canta en el mar, canta en el baño de tu facultad ♪
+      </span>
+    </div>
+  </div>
+
+  <audio id="salmonAudio" loop>
+    <source src="singing-salmon.mp3" type="audio/mpeg">
+  </audio>
+</section>
+
+<section class="galeria">
+  <h2 class="galeria-titulo">galería de peces importantes</h2>
+  <img src="salmon.gif" alt="salmon" style="display:block;width:90px;margin:0 auto 20px;transform:rotate(-4deg)">
+  <div class="galeria-grid">
+    <div class="galeria-item">
+      <img src="meditando.gif" alt="pez meditando">
+      <div class="caption">pez meditando en el agua</div>
+    </div>
+    <div class="galeria-item">
+      <img src="pez-que-mira.jpg" alt="pez mirando">
+      <div class="caption">te está mirando a vos</div>
+    </div>
+    <div class="galeria-item">
+      <img src="contento.jpg" alt="pez sonriendo">
+      <div class="caption">pez contento (raro)</div>
+    </div>
+    <div class="galeria-item">
+      <img src="pez-examen.jpg" alt="pez furioso">
+      <div class="caption">cuando te va a quedar el examen</div>
+    </div>
+    <div class="galeria-item">
+      <img src="deportista.jpg" alt="pez con zapatillas">
+      <div class="caption">pez deportista</div>
+    </div>
+    <div class="galeria-item">
+      <img src="fumador.jpg" alt="pez fumando">
+      <div class="caption">después del parcial de algoritmos</div>
+    </div>
+    <div class="galeria-item">
+      <img src="pez-despues-del-parcial.jpg" alt="catfish">
+      <div class="caption">mitad gato, mitad pez, 100% problema</div>
+    </div>
+    <div class="galeria-item">
+      <img src="fih.jpg" alt="fih">
+      <div class="caption">fih</div>
+    </div>
+  </div>
+</section>
+
+<section class="sabiduria">
+  <h2>sabiduría del pez</h2>
+  <div class="sabiduria-card">
+    <img class="sabiduria-fish" src="pez-que-mira.jpg" alt="pez sabio">
+    <div class="frase" id="fraseTexto">"el pez no pregunta si el código compila. el pez nada."</div>
+    <div class="frase-autor">— el pez. siempre el pez.</div>
+  </div>
+  <button class="btn-frase" onclick="nuevaFrase()">otra frase, por favor</button>
+</section>
+
+<section class="quiz-section">
+  <h2>¿qué pez sos?</h2>
+  <p class="subtitulo">test de personalidad basado en ciencia real (mentira)</p>
+  <div class="quiz-box">
+    <div id="quizArea">
+      <div class="quiz-progreso" id="quizProg">pregunta 1 de 4</div>
+      <div class="quiz-pregunta" id="quizQ"></div>
+      <div class="quiz-opts" id="quizOpts"></div>
+    </div>
+    <div class="resultado-card" id="resultCard">
+      <img class="resultado-img" id="resultImg" src="" alt="resultado">
+      <div class="resultado-titulo" id="resultTitulo"></div>
+      <div class="resultado-desc" id="resultDesc"></div>
+      <button class="btn-reiniciar" onclick="resetQuiz()">de vuelta</button>
+    </div>
+  </div>
+</section>
+
+<section class="panico-section">
+  <h2>botón de pánico académico</h2>
+  <p>para usar en situación de emergencia curricular</p>
+  <button class="btn-panico" id="panicBtn" onclick="togglePanic()">ACTIVAR PÁNICO</button>
+  <div class="panico-texto" id="panicTexto"></div>
+</section>
+
+<section class="resenas-section">
+  <div class="resenas-header">
+    <img src="salmon.gif" alt="salmon" style="width:55px;transform:rotate(10deg)">
+    <h2 class="resenas-titulo"> libro de visitas</h2>
+    <img src="salmon.gif" alt="salmon" style="width:55px;transform:scaleX(-1) rotate(-10deg)">
+  </div>
+  <p class="resenas-sub">
+    dejá tu reseña. tenés que ser honesto/a.
+  </p>
+
+  <div class="resenas-borde-raro">
+    <form class="resenas-form" id="resenaForm" onsubmit="enviarResena(event)">
+      <div class="form-fila">
+        <label class="form-label">tu nombre o apodo:</label>
+        <input class="form-input" id="rNombre" type="text" maxlength="40" placeholder="ej: el pez anónimo" required>
+      </div>
+      <div class="form-fila">
+        <label class="form-label">tu reseña / mensaje / queja:</label>
+        <textarea class="form-textarea" id="rMensaje" maxlength="300" placeholder="máx 300 caracteres. pensalo bien." required></textarea>
+        <div class="char-count"><span id="charCount">0</span>/300</div>
+      </div>
+      <button class="btn-enviar" type="submit" id="btnEnviar">📨 mandar</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </div>
+
+  <div class="resenas-lista-titulo">— lo que dijeron —</div>
+  <div class="resenas-lista" id="resenaLista">
+    <div class="resena-loading">cargando opiniones del pueblo...</div>
+  </div>
+</section>
+
+<div class="swarm-container" id="swarm"></div>
+
+<footer>
+  <img class="footer-gif" src="salmon.gif" alt="salmon">
+  hecho por <span>alan</span> · facultad de informática · año en curso
+  <img class="footer-gif" src="salmon.gif" alt="salmon" style="transform:scaleX(-1)">
+  <br>
+  <span class="visitas">visitas: <span id="visitas">1337</span></span>
+  <br><br>
+  <span style="color:#333; font-size:0.7rem">optimizado para internet explorer 6.</span>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
